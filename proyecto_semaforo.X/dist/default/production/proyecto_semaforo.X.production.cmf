@@ -13,10 +13,10 @@
 %PSECTS
 $build/default/production/proyecto1.o
 resVect code 0 0 0 3 2
-code CODE 0 0 0 1AE 2
-intVect CODE 0 0 0 E 2
+code CODE 0 0 0 1DE 2
+intVect CODE 0 0 0 11 2
 udata_bank0 BANK0 1 20 20 5 1
-udata_shr COMMON 1 70 70 3 1
+udata_shr COMMON 1 70 70 4 1
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -32,14 +32,14 @@ BANK0 25-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 1AE-1FFF 2
-ENTRY 1AE-1FFF 2
+CONST 1DE-1FFF 2
+ENTRY 1DE-1FFF 2
 IDLOC 2000-2003 2
-CODE 1AE-1FFF 2
-COMMON 73-7F 1
+CODE 1DE-1FFF 2
+COMMON 74-7F 1
 EEDATA 2100-21FF 2
-STRCODE 1AE-1FFF 2
-STRING 1AE-1FFF 2
+STRCODE 1DE-1FFF 2
+STRING 1DE-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -54,214 +54,276 @@ STRING 1AE-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/production/proyecto1.o
-0 intVect CODE >57:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-4 intVect CODE >58:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+0 intVect CODE >58:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 4 intVect CODE >59:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-5 intVect CODE >60:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-6 intVect CODE >61:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-7 intVect CODE >63:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-7 intVect CODE >66:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-8 intVect CODE >67:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-9 intVect CODE >69:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-9 intVect CODE >70:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-A intVect CODE >71:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-B intVect CODE >72:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-C intVect CODE >73:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-D intVect CODE >74:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-0 resVect code >50:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+4 intVect CODE >60:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+5 intVect CODE >61:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+6 intVect CODE >62:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+7 intVect CODE >64:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+7 intVect CODE >65:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+8 intVect CODE >66:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+9 intVect CODE >67:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+A intVect CODE >68:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+B intVect CODE >69:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+C intVect CODE >71:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+C intVect CODE >72:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+D intVect CODE >73:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+E intVect CODE >74:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+F intVect CODE >75:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+10 intVect CODE >76:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 0 resVect code >51:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 0 resVect code >52:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-2 resVect code >53:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-0 code CODE >77:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-100 code CODE >80:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-100 code CODE >81:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-101 code CODE >82:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-102 code CODE >83:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-103 code CODE >84:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-104 code CODE >85:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-105 code CODE >86:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-106 code CODE >87:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-107 code CODE >88:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-108 code CODE >89:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-109 code CODE >90:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-10A code CODE >91:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-10B code CODE >92:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-10C code CODE >93:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-10D code CODE >94:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-10E code CODE >95:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-10F code CODE >96:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-110 code CODE >97:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-111 code CODE >98:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-112 code CODE >99:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-113 code CODE >100:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-114 code CODE >102:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-114 code CODE >103:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-116 code CODE >104:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-117 code CODE >105:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-118 code CODE >107:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-11A code CODE >108:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-11B code CODE >109:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-11C code CODE >110:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-11D code CODE >111:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-11E code CODE >112:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-11F code CODE >113:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-120 code CODE >115:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-121 code CODE >116:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-122 code CODE >117:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-123 code CODE >118:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-124 code CODE >119:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-125 code CODE >120:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-126 code CODE >121:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-127 code CODE >122:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-128 code CODE >124:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-129 code CODE >125:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-12A code CODE >126:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-12B code CODE >127:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-12C code CODE >128:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-12D code CODE >129:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-12E code CODE >130:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-12F code CODE >131:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-130 code CODE >133:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-131 code CODE >134:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-132 code CODE >135:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-133 code CODE >138:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-134 code CODE >139:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-135 code CODE >140:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-136 code CODE >141:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-137 code CODE >142:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-138 code CODE >143:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-139 code CODE >146:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-13A code CODE >147:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-13B code CODE >148:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-13C code CODE >149:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-13D code CODE >151:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-13F code CODE >152:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-140 code CODE >153:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-141 code CODE >154:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-142 code CODE >155:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-143 code CODE >156:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-144 code CODE >157:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-146 code CODE >159:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-146 code CODE >162:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-147 code CODE >164:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-147 code CODE >165:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-149 code CODE >166:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-14A code CODE >167:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-14B code CODE >168:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-14C code CODE >169:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-14D code CODE >170:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-14E code CODE >171:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-14F code CODE >172:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-151 code CODE >173:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-152 code CODE >174:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-153 code CODE >175:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-154 code CODE >176:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-155 code CODE >177:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-156 code CODE >178:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-157 code CODE >179:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-158 code CODE >180:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-159 code CODE >181:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-15A code CODE >183:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-15A code CODE >184:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-15C code CODE >185:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-15D code CODE >186:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-15E code CODE >187:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-15F code CODE >188:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-160 code CODE >189:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-161 code CODE >191:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-161 code CODE >192:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-163 code CODE >193:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-164 code CODE >194:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-165 code CODE >195:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-166 code CODE >196:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-167 code CODE >198:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-167 code CODE >199:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-169 code CODE >200:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-16A code CODE >201:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-16B code CODE >202:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-16C code CODE >203:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-16D code CODE >204:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-16E code CODE >205:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-16F code CODE >241:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-16F code CODE >242:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-171 code CODE >243:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-172 code CODE >244:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-173 code CODE >245:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-174 code CODE >246:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-175 code CODE >249:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+0 resVect code >53:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+2 resVect code >54:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+0 code CODE >79:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+100 code CODE >82:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+100 code CODE >83:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+101 code CODE >84:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+102 code CODE >85:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+103 code CODE >86:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+104 code CODE >87:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+105 code CODE >88:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+106 code CODE >89:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+107 code CODE >90:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+108 code CODE >91:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+109 code CODE >92:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+10A code CODE >93:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+10B code CODE >94:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+10C code CODE >95:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+10D code CODE >96:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+10E code CODE >97:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+10F code CODE >98:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+110 code CODE >99:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+111 code CODE >100:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+112 code CODE >101:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+113 code CODE >102:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+114 code CODE >104:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+114 code CODE >105:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+116 code CODE >106:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+117 code CODE >107:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+118 code CODE >109:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+11A code CODE >110:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+11B code CODE >111:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+11C code CODE >112:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+11D code CODE >113:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+11E code CODE >114:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+11F code CODE >115:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+120 code CODE >117:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+121 code CODE >118:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+122 code CODE >119:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+123 code CODE >120:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+124 code CODE >121:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+125 code CODE >122:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+126 code CODE >123:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+127 code CODE >124:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+128 code CODE >126:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+129 code CODE >127:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+12A code CODE >128:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+12B code CODE >129:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+12C code CODE >130:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+12D code CODE >131:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+12E code CODE >132:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+12F code CODE >133:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+130 code CODE >135:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+131 code CODE >136:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+132 code CODE >137:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+133 code CODE >140:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+134 code CODE >141:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+135 code CODE >142:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+136 code CODE >143:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+137 code CODE >144:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+138 code CODE >145:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+139 code CODE >148:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+13A code CODE >149:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+13B code CODE >150:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+13C code CODE >151:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+13D code CODE >153:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+13F code CODE >154:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+140 code CODE >155:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+141 code CODE >156:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+142 code CODE >157:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+143 code CODE >158:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+144 code CODE >159:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+146 code CODE >161:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+146 code CODE >164:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+147 code CODE >166:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+147 code CODE >167:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+149 code CODE >168:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+14A code CODE >169:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+14B code CODE >170:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+14C code CODE >171:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+14D code CODE >172:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+14E code CODE >173:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+14F code CODE >174:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+151 code CODE >175:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+152 code CODE >176:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+153 code CODE >177:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+154 code CODE >178:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+155 code CODE >179:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+156 code CODE >180:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+157 code CODE >181:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+158 code CODE >182:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+159 code CODE >183:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+15A code CODE >185:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+15A code CODE >186:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+15C code CODE >187:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+15D code CODE >188:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+15E code CODE >189:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+15F code CODE >190:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+160 code CODE >191:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+161 code CODE >193:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+161 code CODE >194:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+163 code CODE >195:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+164 code CODE >196:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+165 code CODE >197:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+166 code CODE >198:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+167 code CODE >200:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+167 code CODE >201:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+169 code CODE >202:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+16A code CODE >203:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+16B code CODE >204:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+16C code CODE >205:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+16D code CODE >206:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+16E code CODE >207:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+16F code CODE >243:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+16F code CODE >244:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+170 code CODE >245:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+171 code CODE >246:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+172 code CODE >247:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+173 code CODE >248:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+174 code CODE >249:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 175 code CODE >250:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 176 code CODE >251:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 177 code CODE >252:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 178 code CODE >253:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 179 code CODE >254:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-17A code CODE >255:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-17B code CODE >256:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-17C code CODE >257:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-17D code CODE >258:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-17E code CODE >259:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-17F code CODE >260:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-180 code CODE >261:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-181 code CODE >262:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-182 code CODE >263:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-183 code CODE >264:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-184 code CODE >265:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-185 code CODE >267:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-185 code CODE >268:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-186 code CODE >269:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-187 code CODE >271:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-187 code CODE >272:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-188 code CODE >273:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-189 code CODE >275:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-189 code CODE >276:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-18A code CODE >277:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-18B code CODE >278:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-18C code CODE >279:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-18D code CODE >281:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+17A code CODE >256:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+17A code CODE >257:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+17B code CODE >258:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+17C code CODE >259:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+17D code CODE >260:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+17E code CODE >261:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+17F code CODE >263:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+17F code CODE >264:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+180 code CODE >265:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+181 code CODE >266:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+182 code CODE >267:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+183 code CODE >268:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+184 code CODE >270:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+184 code CODE >271:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+185 code CODE >272:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+186 code CODE >273:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+187 code CODE >274:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+188 code CODE >275:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+189 code CODE >277:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+189 code CODE >278:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+18A code CODE >279:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+18B code CODE >280:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+18C code CODE >281:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 18D code CODE >282:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-18E code CODE >283:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-18F code CODE >285:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+18E code CODE >284:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+18E code CODE >285:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 18F code CODE >286:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 190 code CODE >287:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-191 code CODE >289:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-191 code CODE >290:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-192 code CODE >291:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-193 code CODE >293:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-193 code CODE >294:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-194 code CODE >295:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-195 code CODE >297:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-195 code CODE >298:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-196 code CODE >299:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-197 code CODE >301:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-197 code CODE >302:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-198 code CODE >303:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-199 code CODE >304:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-19A code CODE >305:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-19A code CODE >306:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-19B code CODE >307:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-19C code CODE >308:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-19D code CODE >309:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-19D code CODE >310:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-19E code CODE >311:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-19F code CODE >312:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A0 code CODE >313:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A0 code CODE >314:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A1 code CODE >315:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A2 code CODE >316:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A3 code CODE >317:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A3 code CODE >318:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A4 code CODE >319:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A5 code CODE >320:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A6 code CODE >321:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A6 code CODE >322:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A7 code CODE >323:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A8 code CODE >324:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A9 code CODE >325:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1A9 code CODE >326:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1AA code CODE >327:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1AB code CODE >328:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1AC code CODE >329:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1AC code CODE >330:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
-1AD code CODE >331:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+191 code CODE >288:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+192 code CODE >289:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+193 code CODE >291:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+193 code CODE >292:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+194 code CODE >293:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+195 code CODE >294:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+196 code CODE >295:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+196 code CODE >296:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+197 code CODE >297:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+198 code CODE >298:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+199 code CODE >299:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+199 code CODE >300:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+19A code CODE >301:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+19B code CODE >302:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+19C code CODE >303:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+19C code CODE >304:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+19D code CODE >305:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+19E code CODE >306:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+19F code CODE >307:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+19F code CODE >308:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A0 code CODE >309:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A1 code CODE >312:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A1 code CODE >313:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A3 code CODE >314:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A4 code CODE >315:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A5 code CODE >316:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A6 code CODE >317:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A7 code CODE >320:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A7 code CODE >321:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A8 code CODE >322:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1A9 code CODE >323:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1AA code CODE >324:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1AB code CODE >325:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1AC code CODE >326:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1AD code CODE >327:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1AE code CODE >328:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1AF code CODE >329:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B0 code CODE >330:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B1 code CODE >331:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B2 code CODE >332:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B3 code CODE >333:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B4 code CODE >334:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B5 code CODE >335:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B6 code CODE >336:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B7 code CODE >338:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B7 code CODE >339:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B8 code CODE >340:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B9 code CODE >342:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1B9 code CODE >343:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BA code CODE >344:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BB code CODE >346:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BB code CODE >347:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BC code CODE >348:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BD code CODE >350:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BD code CODE >351:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BE code CODE >352:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BF code CODE >354:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1BF code CODE >355:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C0 code CODE >356:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C1 code CODE >358:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C1 code CODE >359:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C2 code CODE >360:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C3 code CODE >362:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C3 code CODE >363:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C4 code CODE >364:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C5 code CODE >366:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C5 code CODE >367:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C6 code CODE >368:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C7 code CODE >370:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C7 code CODE >371:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C8 code CODE >372:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1C9 code CODE >373:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1CA code CODE >374:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1CA code CODE >375:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1CB code CODE >376:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1CC code CODE >377:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1CD code CODE >378:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1CD code CODE >379:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1CE code CODE >380:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1CF code CODE >381:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D0 code CODE >382:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D0 code CODE >383:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D1 code CODE >384:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D2 code CODE >385:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D3 code CODE >386:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D3 code CODE >387:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D4 code CODE >388:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D5 code CODE >389:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D6 code CODE >390:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D6 code CODE >391:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D7 code CODE >392:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D8 code CODE >393:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D9 code CODE >394:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1D9 code CODE >395:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1DA code CODE >396:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1DB code CODE >397:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1DC code CODE >398:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1DC code CODE >399:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
+1DD code CODE >400:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -274,8 +336,8 @@ D intVect CODE >74:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 1AE 0 ABS 0 - -
-__Hspace_1 73 0 ABS 0 - -
+__Hspace_0 1DE 0 ABS 0 - -
+__Hspace_1 74 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Hudata_bank0 0 0 ABS 0 udata_bank0 -
@@ -293,7 +355,7 @@ __Hdata 0 0 ABS 0 data -
 __Lcode 0 0 ABS 0 code -
 __Ldata 0 0 ABS 0 data -
 __S0 0 0 ABS 0 - -
-__S1 73 0 ABS 0 - -
+__S1 74 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __HresVect 6 0 code 0 resVect -
 __Lconfig 0 0 CONFIG 4 config -
@@ -334,7 +396,7 @@ __HintVect 0 0 ABS 0 intVect -
 # All other numeric quantities are in decimal.
 %SEGMENTS
 udata_bank0 1 20 20 5 1
-udata_shr 1 70 70 3 1
+udata_shr 1 70 70 4 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
