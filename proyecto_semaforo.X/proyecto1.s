@@ -43,7 +43,10 @@ PROCESSOR 16F887  ; Se elige el microprocesador a usar
   W_T:       DS 1 ; variable que de interrupcio para w
   STATUS_T:  DS 1 ; variable que de interrupcio que guarda STATUS
   SENAL:     DS 1 ; Se utiliza como indicador para el cambio de display
-  Estado:    DS 1 ; Se utiliza como indicador para el cambio de estado 
+  Estado:    DS 1 ; Se utiliza como indicador para el cambio de estado
+  V1:        DS 1
+  V2:        DS 1
+  V3:        DS 1  
   
 ;Instrucciones de reset
 PSECT resVect, class=code, abs, delta=2
@@ -64,7 +67,6 @@ ORG 04h
     ISR:
       BTFSC RBIF ; confirma si hubo una interrucion en el puerto B
       CALL ESTADOS ; llama a la subrrutina de la interrupcion del contador binario
-      BCF RBIF
       BTFSC T0IF; verifica si se desbordo el timer0
       CALL INT_T0; llama a la subrrutina de interrupcion del tiemer 0
       
@@ -140,6 +142,8 @@ main:
     BSF TRISB,0
     BSF TRISB,1
     BSF TRISB,2 ; Se ponen los primeros 3 pines como entradas  
+    BCF TRISB,3
+    BCF TRISB,4
     BCF TRISB,5
     BCF TRISB,6
     BCF TRISB,7; Se ponen los tres tres ultimos pines como salida
@@ -159,10 +163,11 @@ main:
     BANKSEL PORTA 
     
 loop:
+    CALL LED_MODO
 ;    CALL MOSTRAR_DIS
 ;    CALL DIVISION
     GOTO loop
-    
+   
 PULL_UP:
     BANKSEL OPTION_REG
     BCF OPTION_REG, 7 ; Se abilitan los pull-up internos del puerto B
@@ -174,7 +179,7 @@ PULL_UP:
     BANKSEL WPUB
     BSF WPUB,0
     BSF WPUB,1
-    BSF WPUB,3
+    BSF WPUB,2
     BCF WPUB,3
     BCF WPUB,4
     BCF WPUB,5
@@ -205,6 +210,56 @@ CONF_INTCON:
     BSF  T0IE ; Permite interrupion del timer 0
     BCF  T0IF ; limpia bandera de desbordamiento de timer 0
     RETURN
+
+LED_MODO:
+    BTFSC Estado, 0
+    GOTO  via1
+    BTFSC Estado, 1
+    GOTO  via2
+    BTFSC Estado, 2
+    GOTO  via3
+    BTFSC Estado, 3
+    GOTO  ACEP_CAN
+    
+normal:
+    BSF PORTB, 3
+    BCF PORTB, 4
+    BCF PORTB, 5
+    BCF PORTB, 6
+    BCF PORTB, 7
+    RETURN
+    
+via1:
+    BCF PORTB, 3
+    BSF PORTB, 4
+    BCF PORTB, 5
+    BCF PORTB, 6
+    BCF PORTB, 7
+    RETURN
+     
+via2:
+    BCF PORTB, 3
+    BCF PORTB, 4
+    BSF PORTB, 5
+    BCF PORTB, 6
+    BCF PORTB, 7
+    RETURN
+    
+via3:
+    BCF PORTB, 3
+    BCF PORTB, 4
+    BCF PORTB, 5
+    BSF PORTB, 6
+    BCF PORTB, 7
+    RETURN
+    
+ACEP_CAN:
+    BCF PORTB, 3
+    BCF PORTB, 4
+    BCF PORTB, 5
+    BCF PORTB, 6
+    BSF PORTB, 7
+    RETURN
     
 ;MOSTRAR_DIS:
 ;    MOVF  DECENA, W
@@ -214,11 +269,11 @@ CONF_INTCON:
 ;    CALL  TABLA 
 ;    MOVWF UNIDAD2; Se guarda en la variable UNIDAD lo que contiene la variable UNIDAD2
 ;    RETURN
-;    
+    
 ;DIVISION:
 ;    BANKSEL PORTA
 ;    CLRF  DECENA; Se limpia la variable CENTENA
-;    MOVF  PORTA, 0
+;    MOVF  V1, 0
 ;    MOVWF RESIDUO ; pasa lo que hay en el puertoA a RESIDUO	    
 ;    MOVLW 10		    
 ;    SUBWF RESIDUO, 0 ; Se resta 100 lo que hay en RESIDUO y se queda en W	    
@@ -236,79 +291,68 @@ CONF_INTCON:
 ;    BTFSC STATUS, 0	    
 ;    RETURN
 ;    GOTO $-6 ; Se resta el nuemro 1 cuanto se necesite para saber las unidades de lo que quedo de la resta anterior 
-;    
+    
     
 ;----------------------sub-rutinas de interrupcion------------------------------    
 
 ESTADOS:
-    BCF PORTB, 5
-    BCF PORTB, 6
-    BCF PORTB, 7
     BTFSC Estado, 0
     GOTO  VIA1
-    BTFSC SENAL, 1
+    BTFSC Estado, 1
     GOTO  VIA2
-    BTFSC SENAL, 2
+    BTFSC Estado, 2
     GOTO  VIA3
-    BTFSC SENAL, 3
+    BTFSC Estado, 3
     GOTO  ACEPTAR_CANCELAR
     
 NORMAL:
-    BCF PORTB, 5
-    BCF PORTB, 6
-    BCF PORTB, 7
-    BTFSC PORTB, 0
-    GOTO NEXT_STATE
-    
-VIA1:
-    BSF PORTB, 5
-    BCF PORTB, 6
-    BCF PORTB, 7
-    BTFSS PORTB,0
-    GOTO NEXT_STATE1
-     
-VIA2:
-    BCF PORTB, 5
-    BSF PORTB, 6
-    BCF PORTB, 7
-    BTFSS PORTB,0
-    GOTO NEXT_STATE2
-    
-VIA3:
-    BSF PORTB, 5
-    BSF PORTB, 6
-    BCF PORTB, 7
-    BTFSS PORTB,0
-    GOTO NEXT_STATE3
-    
-ACEPTAR_CANCELAR:
-    BCF PORTB, 5
-    BCF PORTB, 6
-    BSF PORTB, 7
-    BTFSS PORTB,0
-    GOTO NEXT_STATE4
-    
-NEXT_STATE:
-    MOVLW 00000001B
-    XORWF Estado, F
-    RETURN ; Se utiliza la operacion xor para activar el primer bit de SENAL
-NEXT_STATE1:
-    MOVLW 00000011B
-    XORWF Estado, F
-    RETURN; Se utiliza la operacion xor para activar el segundo bit de SENAL
-NEXT_STATE2:
-    MOVLW 00000110B
-    XORWF Estado, F
-    RETURN; Se utiliza la operacion xor para activar el tercer bit de SENAL
-NEXT_STATE3:
-    MOVLW 00001100B
-    XORWF Estado, F
-    RETURN; Se utiliza la operacion xor para activar el cuarto bit de SENAL
-NEXT_STATE4:
-    CLRF Estado; Se limpia la variable SENAL
+    BTFSS PORTB, 0
+    BSF   Estado,0
+    BCF   RBIF
     RETURN
     
+VIA1:
+    BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
+    INCF  V1 ;incrementa la variable
+    BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
+    DECF  V1; decrementa la variable
+    BTFSS PORTB,0
+    BCF   Estado,0
+    BSF   Estado,1
+    BCF   RBIF
+    RETURN
+     
+VIA2:
+    BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
+    INCF  V2 ;incrementa la variable
+    BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
+    DECF  V3; decrementa la variable
+    BTFSS PORTB,0
+    BCF   Estado,1
+    BSF   Estado,2
+    BCF   RBIF
+    RETURN
     
+VIA3:
+    BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
+    INCF  V3 ;incrementa la variable
+    BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
+    DECF  V3; decrementa la variable
+    BTFSS PORTB,0
+    BCF   Estado,2
+    BSF   Estado,3
+    BCF   RBIF
+    RETURN
+    
+ACEPTAR_CANCELAR:
+    BSF  PORTA, 1
+    BCF  PORTA, 0
+    BTFSS PORTB,0
+    CLRF  Estado
+    BCF   RBIF
+    RETURN
+    
+
 R_TIMER0:
     BANKSEL PORTA
     MOVLW  255
@@ -360,10 +404,14 @@ DIS5:
     GOTO NEXT_D5 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
 
 DIS6:
+    MOVF DECENA2, W
+    MOVWF PORTC
     BSF PORTD, 6 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D6 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS7:
+    MOVF UNIDAD2, W
+    MOVWF PORTC
     BSF PORTD, 7 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D7 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
