@@ -2481,12 +2481,25 @@ ENDM
   CONFIG WRT = OFF ; Flash Program Memory Self Write Enable bits (0000h to 0FFFh write protected, 1000h to 1FFFh may be modified by EECON control)
 
 ;-------------------------------varibles----------------------------------------
+  GLOBAL V1
   PSECT udata_bank0
-  UNIDAD: DS 1 ; variable que se usa en la division para guardar la unidad
-  DECENA: DS 1 ; variable que se usa en la division para guardar la decena
-  RESIDUO: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
-  UNIDAD2: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
-  DECENA2: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena
+  UNIDAD_V1: DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_V1: DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_V1: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_V1: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_V1: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena
+
+  UNIDAD_V2: DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_V2: DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_V2: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_V2: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_V2: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena
+
+  UNIDAD_V3: DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_V3: DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_V3: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_V3: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_V3: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena
 
   PSECT udata_shr ;common memory
   W_T: DS 1 ; variable que de interrupcio para w
@@ -2516,6 +2529,7 @@ ORG 04h
     ISR:
       BTFSC ((INTCON) and 07Fh), 0 ; confirma si hubo una interrucion en el puerto B
       CALL ESTADOS ; llama a la subrrutina de la interrupcion del contador binario
+      BCF ((INTCON) and 07Fh), 0
       BTFSC ((INTCON) and 07Fh), 2; verifica si se desbordo el timer0
       CALL INT_T0; llama a la subrrutina de interrupcion del tiemer 0
 
@@ -2613,8 +2627,8 @@ main:
 
 loop:
     CALL LED_MODO
-; CALL MOSTRAR_DIS
-; CALL DIVISION
+    CALL MOSTRAR_DIS
+    CALL DIVISION
     GOTO loop
 
 PULL_UP:
@@ -2710,36 +2724,78 @@ ACEP_CAN:
     BSF PORTB, 7
     RETURN
 
-;MOSTRAR_DIS:
-; MOVF DECENA, W
-; CALL TABLA
-; MOVWF DECENA2; Se guarda en la variable DECENA lo que contiene la variable DECENA2
-; MOVF UNIDAD, W
-; CALL TABLA
-; MOVWF UNIDAD2; Se guarda en la variable UNIDAD lo que contiene la variable UNIDAD2
-; RETURN
+MOSTRAR_DIS:
+    MOVF DECENA_V1, W
+    CALL TABLA
+    MOVWF DECENA2_V1; Se guarda en la variable DECENA lo que contiene la variable DECENA2
+    MOVF UNIDAD_V1, W
+    CALL TABLA
+    MOVWF UNIDAD2_V1; Se guarda en la variable UNIDAD lo que contiene la variable UNIDAD2
 
-;DIVISION:
-; BANKSEL PORTA
-; CLRF DECENA; Se limpia la variable CENTENA
-; MOVF V1, 0
-; MOVWF RESIDUO ; pasa lo que hay en el puertoA a RESIDUO
-; MOVLW 10
-; SUBWF RESIDUO, 0 ; Se resta 100 lo que hay en RESIDUO y se queda en W
-; BTFSC STATUS, 0 ; Se asegura que se realizo la operacion
-; INCF DECENA ; nuemero de centenas que caben en el numero del puertoA
-; BTFSC STATUS, 0
-; MOVWF RESIDUO ; El resultado de la resta se guarda en RESIDUO
-; BTFSC STATUS, 0
-; GOTO $-7 ; Se repite por cada centena que pueda haber
-; CLRF UNIDAD ;Se limpia la variable CENTENA
-; MOVLW 1
-; SUBWF RESIDUO, 0 ; Se resta 10 lo que hay en RESIDUO y se queda en W
-; BTFSC STATUS, 0 ; Se asegura que se realizo la operacion
-; INCF UNIDAD ; nuemero de decenas que caben en el numero del puertoA
-; BTFSC STATUS, 0
-; RETURN
-; GOTO $-6 ; Se resta el nuemro 1 cuanto se necesite para saber las unidades de lo que quedo de la resta anterior
+    MOVF DECENA_V2, W
+    CALL TABLA
+    MOVWF DECENA2_V2; Se guarda en la variable DECENA lo que contiene la variable DECENA2
+    MOVF UNIDAD_V2, W
+    CALL TABLA
+    MOVWF UNIDAD2_V2; Se guarda en la variable UNIDAD lo que contiene la variable UNIDAD2
+
+    MOVF DECENA_V3, W
+    CALL TABLA
+    MOVWF DECENA2_V3; Se guarda en la variable DECENA lo que contiene la variable DECENA2
+    MOVF UNIDAD_V3, W
+    CALL TABLA
+    MOVWF UNIDAD2_V3; Se guarda en la variable UNIDAD lo que contiene la variable UNIDAD2
+    RETURN
+
+DIVISION:
+    clrf DECENA_V1 ;Limpiamos los registros a utilizar
+    clrf UNIDAD_V1
+    clrf RESIDUO_V1
+    movf V1, 0 ;Trasladamos valor en IncrementoT1 a resta
+    movwf RESIDUO_V1
+    movlw 10 ;Mover valor 10 a W
+    subwf RESIDUO_V1, f ;Restamos W y Resta, lo guardamos en el registro
+    btfsc STATUS, 0 ;Si la bandera no se levanto, no saltar
+    incf DECENA_V1 ;Incrementar decenas
+    btfsc STATUS, 0 ;Si la bandera no se levanto, no saltar
+    goto $-5 ;Repetir hasta que ya no hayan decenas
+    movlw 10 ;Evitar que haya un overlap (00h - FFh)
+    addwf RESIDUO_V1
+    movf RESIDUO_V1, 0 ;Trasladar valor restante a unidades
+    movwf UNIDAD_V1
+
+    clrf DECENA_V2 ;Limpiamos los registros a utilizar
+    clrf UNIDAD_V2
+    clrf RESIDUO_V2
+    movf V2, 0 ;Trasladamos valor en IncrementoT1 a resta
+    movwf RESIDUO_V2
+    movlw 10 ;Mover valor 10 a W
+    subwf RESIDUO_V2, f ;Restamos W y Resta, lo guardamos en el registro
+    btfsc STATUS, 0 ;Si la bandera no se levanto, no saltar
+    incf DECENA_V2 ;Incrementar decenas
+    btfsc STATUS, 0 ;Si la bandera no se levanto, no saltar
+    goto $-5 ;Repetir hasta que ya no hayan decenas
+    movlw 10 ;Evitar que haya un overlap (00h - FFh)
+    addwf RESIDUO_V2
+    movf RESIDUO_V2, 0 ;Trasladar valor restante a unidades
+    movwf UNIDAD_V2
+
+    clrf DECENA_V3 ;Limpiamos los registros a utilizar
+    clrf UNIDAD_V3
+    clrf RESIDUO_V3
+    movf V3, 0 ;Trasladamos valor en IncrementoT1 a resta
+    movwf RESIDUO_V3
+    movlw 10 ;Mover valor 10 a W
+    subwf RESIDUO_V3, f ;Restamos W y Resta, lo guardamos en el registro
+    btfsc STATUS, 0 ;Si la bandera no se levanto, no saltar
+    incf DECENA_V3 ;Incrementar decenas
+    btfsc STATUS, 0 ;Si la bandera no se levanto, no saltar
+    goto $-5 ;Repetir hasta que ya no hayan decenas
+    movlw 10 ;Evitar que haya un overlap (00h - FFh)
+    addwf RESIDUO_V3
+    movf RESIDUO_V3, 0 ;Trasladar valor restante a unidades
+    movwf UNIDAD_V3
+    RETURN
 
 
 ;----------------------sub-rutinas de interrupcion------------------------------
@@ -2757,7 +2813,6 @@ ESTADOS:
 NORMAL:
     BTFSS PORTB, 0
     BSF Estado,0
-    BCF ((INTCON) and 07Fh), 0
     RETURN
 
 VIA1:
@@ -2767,19 +2822,19 @@ VIA1:
     DECF V1; decrementa la variable
     BTFSS PORTB,0
     BCF Estado,0
+    BTFSS PORTB, 0
     BSF Estado,1
-    BCF ((INTCON) and 07Fh), 0
     RETURN
 
 VIA2:
     BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
     INCF V2 ;incrementa la variable
     BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
-    DECF V3; decrementa la variable
+    DECF V2; decrementa la variable
     BTFSS PORTB,0
     BCF Estado,1
+    BTFSS PORTB, 0
     BSF Estado,2
-    BCF ((INTCON) and 07Fh), 0
     RETURN
 
 VIA3:
@@ -2789,16 +2844,13 @@ VIA3:
     DECF V3; decrementa la variable
     BTFSS PORTB,0
     BCF Estado,2
+    BTFSS PORTB,0
     BSF Estado,3
-    BCF ((INTCON) and 07Fh), 0
     RETURN
 
 ACEPTAR_CANCELAR:
-    BSF PORTA, 1
-    BCF PORTA, 0
     BTFSS PORTB,0
     CLRF Estado
-    BCF ((INTCON) and 07Fh), 0
     RETURN
 
 
@@ -2853,13 +2905,17 @@ DIS5:
     GOTO NEXT_D5 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
 
 DIS6:
-    MOVF DECENA2, W
+    BTFSC PORTB,3
+    RETURN
+    MOVF DECENA2_V3, W
     MOVWF PORTC
     BSF PORTD, 6 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D6 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
 
 DIS7:
-    MOVF UNIDAD2, W
+    BTFSC PORTB,3
+    RETURN
+    MOVF UNIDAD2_V3, W
     MOVWF PORTC
     BSF PORTD, 7 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D7 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
