@@ -2617,6 +2617,11 @@ main:
     CALL CONF_IOC
     CALL CONF_INTCON ; Se llama a las diferentes subrrutinas de configuracion
 
+    MOVLW 10
+    MOVWF V1
+    MOVWF V2
+    MOVWF V3
+
     BANKSEL PORTA
     CLRF PORTA
     CLRF PORTB
@@ -2817,9 +2822,9 @@ NORMAL:
 
 VIA1:
     BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
-    INCF V1 ;incrementa la variable
+    CALL INCREMENTO_V1 ;incrementa la variable
     BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
-    DECF V1; decrementa la variable
+    CALL DECREMENTO_V1 ; decrementa la variable
     BTFSS PORTB,0
     BCF Estado,0
     BTFSS PORTB, 0
@@ -2828,9 +2833,9 @@ VIA1:
 
 VIA2:
     BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
-    INCF V2 ;incrementa la variable
+    CALL INCREMENTO_V2 ;incrementa la variable
     BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
-    DECF V2; decrementa la variable
+    CALL DECREMENTO_V2; decrementa la variable
     BTFSS PORTB,0
     BCF Estado,1
     BTFSS PORTB, 0
@@ -2839,9 +2844,9 @@ VIA2:
 
 VIA3:
     BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
-    INCF V3 ;incrementa la variable
+    CALL INCREMENTO_V3 ;incrementa la variable
     BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
-    DECF V3; decrementa la variable
+    CALL DECREMENTO_V3; decrementa la variable
     BTFSS PORTB,0
     BCF Estado,2
     BTFSS PORTB,0
@@ -2853,6 +2858,71 @@ ACEPTAR_CANCELAR:
     CLRF Estado
     RETURN
 
+INCREMENTO_V1:
+    INCF V1
+    BCF STATUS, 2
+    MOVLW 21
+    SUBWF V1, w
+    BTFSS STATUS, 2
+    GOTO $+3
+    MOVLW 10
+    MOVWF V1
+    RETURN
+
+DECREMENTO_V1:
+    DECF V1
+    BCF STATUS, 2
+    MOVLW 9
+    SUBWF V1, w
+    BTFSS STATUS, 2
+    GOTO $+3
+    MOVLW 20
+    MOVWF V1
+    RETURN
+
+INCREMENTO_V2:
+    INCF V2
+    BCF STATUS, 2
+    MOVLW 21
+    SUBWF V2, w
+    BTFSS STATUS, 2
+    GOTO $+3
+    MOVLW 10
+    MOVWF V2
+    RETURN
+
+DECREMENTO_V2:
+    DECF V2
+    BCF STATUS, 2
+    MOVLW 9
+    SUBWF V2, w
+    BTFSS STATUS, 2
+    GOTO $+3
+    MOVLW 20
+    MOVWF V2
+    RETURN
+
+INCREMENTO_V3:
+    INCF V3
+    BCF STATUS, 2
+    MOVLW 21
+    SUBWF V3, w
+    BTFSS STATUS, 2
+    GOTO $+3
+    MOVLW 10
+    MOVWF V3
+    RETURN
+
+DECREMENTO_V3:
+    DECF V3
+    BCF STATUS, 2
+    MOVLW 9
+    SUBWF V3, w
+    BTFSS STATUS, 2
+    GOTO $+3
+    MOVLW 20
+    MOVWF V3
+    RETURN
 
 R_TIMER0:
     BANKSEL PORTA
@@ -2907,16 +2977,28 @@ DIS5:
 DIS6:
     BTFSC PORTB,3
     RETURN
-    MOVF DECENA2_V3, W
-    MOVWF PORTC
+    BTFSC PORTB,4
+    CALL DIS_V1_DECENA
+    BTFSC PORTB,5
+    CALL DIS_V2_DECENA
+    BTFSC PORTB,6
+    CALL DIS_V3_DECENA
+    BTFSC PORTB,7
+    RETURN
     BSF PORTD, 6 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D6 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
 
 DIS7:
     BTFSC PORTB,3
     RETURN
-    MOVF UNIDAD2_V3, W
-    MOVWF PORTC
+    BTFSC PORTB,4
+    CALL DIS_V1_UNIDAD
+    BTFSC PORTB,5
+    CALL DIS_V2_UNIDAD
+    BTFSC PORTB,6
+    CALL DIS_V3_UNIDAD
+    BTFSC PORTB,7
+    RETURN
     BSF PORTD, 7 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D7 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
 
@@ -2952,4 +3034,33 @@ NEXT_D7:
     CLRF SENAL; Se limpia la variable SENAL
     RETURN
 
+DIS_V1_DECENA:
+    MOVF DECENA2_V1, W
+    MOVWF PORTC
+    RETURN
+
+DIS_V1_UNIDAD:
+    MOVF UNIDAD2_V1, W
+    MOVWF PORTC
+    RETURN
+
+DIS_V2_DECENA:
+    MOVF DECENA2_V2, W
+    MOVWF PORTC
+    RETURN
+
+DIS_V2_UNIDAD:
+    MOVF UNIDAD2_V2, W
+    MOVWF PORTC
+    RETURN
+
+DIS_V3_DECENA:
+    MOVF DECENA2_V3, W
+    MOVWF PORTC
+    RETURN
+
+DIS_V3_UNIDAD:
+    MOVF UNIDAD2_V3, W
+    MOVWF PORTC
+    RETURN
 END
