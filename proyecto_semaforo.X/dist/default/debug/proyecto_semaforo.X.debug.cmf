@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$build/default/production/proyecto1.o
+$build/default/debug/proyecto1.o
 resVect code 0 0 0 3 2
 code CODE 0 0 0 3AC 2
 intVect CODE 0 0 0 14 2
@@ -53,7 +53,7 @@ STRING 3AC-1FFF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$build/default/production/proyecto1.o
+$build/default/debug/proyecto1.o
 0 intVect CODE >96:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 4 intVect CODE >97:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
 4 intVect CODE >98:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de_micros\proyecto_semaforo.X\proyecto1.s
@@ -817,7 +817,7 @@ F intVect CODE >113:C:\Users\duart\OneDrive\Documentos\GitHub\proyecto1_proga_de
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-V1 74 0 COMMON 1 udata_shr build/default/production/proyecto1.o
+V1 74 0 COMMON 1 udata_shr build/default/debug/proyecto1.o
 __Hspace_0 3AC 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -

@@ -6,7 +6,7 @@
   758h - 400Dh
   4012h - 403Fh
   
- dist/default/production\proyecto_semaforo.X.production.hex ranges:
+ dist/default/debug\proyecto_semaforo.X.debug.hex ranges:
   0h - 5h
   8h - 27h
   200h - 757h
@@ -23,7 +23,7 @@
   T = Trailing code
   & = Find & replace opcode
   X = Find & delete opcode
-  1 = dist/default/production\proyecto_semaforo.X.production.hex
+  1 = dist/default/debug\proyecto_semaforo.X.debug.hex
 00000000: 111111--11111111111111111111111111111111------------------------
 00000200: 1111111111111111111111111111111111111111111111111111111111111111
 00000240: 1111111111111111111111111111111111111111111111111111111111111111
