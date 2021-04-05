@@ -68,7 +68,9 @@ PROCESSOR 16F887  ; Se elige el microprocesador a usar
   DECENA_T3:    DS 1   ; variable que se usa en la division para guardar la decena
   RESIDUO_T3:   DS 1   ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
   UNIDAD2_T3:   DS 1   ; Se guarda el valor traducido por la tabla de la variable unidad
-  DECENA2_T3:   DS 1   ; Se guarda el valor traducido por la tabla de la variable decena    
+  DECENA2_T3:   DS 1   ; Se guarda el valor traducido por la tabla de la variable decena 
+    
+  RESET_DIS:    DS 1  
 
   PSECT udata_shr ;common memory
   W_T:       DS 1 ; variable que de interrupcio para w
@@ -78,7 +80,6 @@ PROCESSOR 16F887  ; Se elige el microprocesador a usar
   V1:        DS 1
   V2:        DS 1
   V3:        DS 1 
-  SEMAFOROS: DS 1 ; variable que se incrementa en el timer 1
   TIEMPO1:   DS 1 
   TIEMPO2:   DS 1
   TIEMPO3:   DS 1
@@ -197,11 +198,11 @@ main:
     MOVWF V1
     MOVWF V2
     MOVWF V3
-    MOVLW 11
+    MOVLW 10
     MOVWF TIEMPO1
-    MOVLW 21
+    MOVLW 20
     MOVWF TIEMPO2
-    MOVLW 31
+    MOVLW 30
     MOVWF TIEMPO3
     
     ;Configuracion del timer1
@@ -277,11 +278,21 @@ PARA_MODO_NORMAL:
     movlw 10            ;Si el tiempo en Tiempo1M1 es 10, entonces:
     subwf TIEMPO1, 0
     btfsc STATUS, 2
-    bsf PORTA, 2        ;Encender led verde
+    bsf PORTA, 2        ;Encender led verde semaforo 1
     btfsc STATUS, 2
-    bcf PORTA, 0        ;Apagar led roja para el semaforo 1
+    bcf PORTA, 0  ;Apagar led roja para el semaforo 1
+    btfsc STATUS, 2
+    bcf PORTA, 1  ;APAGA LED AMARILLA semaforo1
     btfsc STATUS, 2
     bsf PORTA, 3        ;Encender led roja para el semaforo 2
+    btfsc STATUS, 2
+    bcf PORTA, 4       ;APAGA led amarillo del semaforo 2
+    btfsc STATUS, 2
+    bcf PORTA, 5       ;APAGA led verde del semaforo 2
+    btfsc STATUS, 2
+    bcf PORTE, 2      ;APARGA led verde del semaforo 3
+    btfsc STATUS, 2
+    bcf PORTE, 1       ;APAGA led amarilla del semaforo3
     btfsc STATUS, 2
     bsf PORTE, 0        ;Encender led roja para el semaforo 3
     movlw 6            ;Si el tiempo en Tiempo1M1 es 6, entonces:
@@ -443,15 +454,15 @@ TOPE:
     return
     
 PARA_T1:
-    MOVF TIEMPO2
+    MOVF TIEMPO2,0
     ADDWF TIEMPO3,0
     RETURN
 PARA_T2:
-    MOVF TIEMPO1
+    MOVF TIEMPO1,0
     ADDWF TIEMPO3,0
     RETURN
 PARA_T3:
-    MOVF TIEMPO2
+    MOVF TIEMPO2,0
     ADDWF TIEMPO1,0
     RETURN
 ;se realiza el cambio de led para indicar el modo
@@ -711,6 +722,13 @@ VIA3:
     RETURN
     
 ACEPTAR_CANCELAR:
+    BCF RESET_DIS,0
+    BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
+    CALL ACEPTAR ;incrementa la variable
+    BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
+    CALL CANCELAR; decrementa la variable
+    BTFSS PORTB,0
+    CALL REINICIO
     BTFSS PORTB,0
     CLRF  Estado
     RETURN
@@ -781,6 +799,48 @@ DECREMENTO_V3:
     MOVWF   V3 
     RETURN
     
+ACEPTAR:
+    CALL RESETEO
+    MOVF V1,0
+    MOVWF TIEMPO1, 1
+    MOVF V2,0
+    ADDWF TIEMPO1,0
+    MOVWF TIEMPO2
+    MOVF V3,0
+    ADDWF TIEMPO2, 0
+    MOVWF TIEMPO3, 1
+    RETURN
+    
+CANCELAR:
+    MOVLW 10
+    MOVWF V1,1
+    MOVWF V2,1
+    MOVWF V3,1
+    CLRF Estado
+    RETURN
+
+RESETEO:
+    CLRF TIEMPO1
+    CLRF TIEMPO2
+    CLRF TIEMPO3
+    BSF RESET_DIS,0
+    BSF PORTA, 0
+    BSF PORTA, 3
+    BSF PORTE, 0
+    RETURN
+
+REINICIO:
+    CLRF TIEMPO1
+    CLRF TIEMPO2
+    CLRF TIEMPO3
+    MOVLW 10
+    MOVWF TIEMPO1
+    MOVLW 20
+    MOVWF TIEMPO2
+    MOVLW 30
+    MOVWF TIEMPO3
+    RETURN
+    
 R_TIMER0:
     BANKSEL PORTA
     MOVLW  255
@@ -808,36 +868,48 @@ INT_T0:
     GOTO  DIS7
     
 DIS0:
+    BTFSC RESET_DIS,0
+    RETURN
     MOVF DECENA2_T1, W
     MOVWF PORTC
     BSF PORTD, 0 ; Se pone el valor de DIS en el puerto D y se activa su display respectivo
     GOTO NEXT_D0; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS1:
+    BTFSC RESET_DIS,0
+    RETURN
     MOVF UNIDAD2_T1, W
     MOVWF PORTC
     BSF PORTD, 1 ; Se pone el valor de DIS+1 en el puerto D y se activa su display respectivo
     GOTO NEXT_D1 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS2:
+    BTFSC RESET_DIS,0
+    RETURN
     MOVF DECENA2_T2, W
     MOVWF PORTC
     BSF PORTD, 2 ; Se pone el valor de CENTENA2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D2 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS3:
+    BTFSC RESET_DIS,0
+    RETURN
     MOVF UNIDAD2_T2, W
     MOVWF PORTC
     BSF PORTD, 3 ; Se pone el valor de DECENA2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D3 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS4:
+    BTFSC RESET_DIS,0
+    RETURN
     MOVF DECENA2_T3, W
     MOVWF PORTC
     BSF PORTD, 4 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
     GOTO NEXT_D4 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
 
 DIS5:
+    BTFSC RESET_DIS,0
+    RETURN
     MOVF UNIDAD2_T3, W
     MOVWF PORTC
     BSF PORTD, 5 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
