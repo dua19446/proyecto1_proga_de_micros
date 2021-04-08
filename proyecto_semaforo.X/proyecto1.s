@@ -34,41 +34,41 @@ PROCESSOR 16F887  ; Se elige el microprocesador a usar
 ;-------------------------------varibles----------------------------------------  
   GLOBAL V1
   PSECT udata_bank0
-  UNIDAD_V1:    DS 1   ; variable que se usa en la division para guardar la unidad
-  DECENA_V1:    DS 1   ; variable que se usa en la division para guardar la decena
-  RESIDUO_V1:   DS 1   ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
-  UNIDAD2_V1:   DS 1   ; Se guarda el valor traducido por la tabla de la variable unidad
-  DECENA2_V1:   DS 1   ; Se guarda el valor traducido por la tabla de la variable decena
+  UNIDAD_V1:  DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_V1:  DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_V1: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_V1: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_V1: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena
   
-  UNIDAD_V2:    DS 1   ; variable que se usa en la division para guardar la unidad
-  DECENA_V2:    DS 1   ; variable que se usa en la division para guardar la decena
-  RESIDUO_V2:   DS 1   ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
-  UNIDAD2_V2:   DS 1   ; Se guarda el valor traducido por la tabla de la variable unidad
-  DECENA2_V2:   DS 1   ; Se guarda el valor traducido por la tabla de la variable decena  
+  UNIDAD_V2:  DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_V2:  DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_V2: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_V2: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_V2: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena  
     
-  UNIDAD_V3:    DS 1   ; variable que se usa en la division para guardar la unidad
-  DECENA_V3:    DS 1   ; variable que se usa en la division para guardar la decena
-  RESIDUO_V3:   DS 1   ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
-  UNIDAD2_V3:   DS 1   ; Se guarda el valor traducido por la tabla de la variable unidad
-  DECENA2_V3:   DS 1   ; Se guarda el valor traducido por la tabla de la variable decena
+  UNIDAD_V3:  DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_V3:  DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_V3: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_V3: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_V3: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena
     
-  UNIDAD_T1:    DS 1   ; variable que se usa en la division para guardar la unidad
-  DECENA_T1:    DS 1   ; variable que se usa en la division para guardar la decena
-  RESIDUO_T1:   DS 1   ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
-  UNIDAD2_T1:   DS 1   ; Se guarda el valor traducido por la tabla de la variable unidad
-  DECENA2_T1:   DS 1   ; Se guarda el valor traducido por la tabla de la variable decena
+  UNIDAD_T1:  DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_T1:  DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_T1: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_T1: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_T1: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena
   
-  UNIDAD_T2:    DS 1   ; variable que se usa en la division para guardar la unidad
-  DECENA_T2:    DS 1   ; variable que se usa en la division para guardar la decena
-  RESIDUO_T2:   DS 1   ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
-  UNIDAD2_T2:   DS 1   ; Se guarda el valor traducido por la tabla de la variable unidad
-  DECENA2_T2:   DS 1   ; Se guarda el valor traducido por la tabla de la variable decena  
+  UNIDAD_T2:  DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_T2:  DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_T2: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_T2: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_T2: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena  
     
-  UNIDAD_T3:    DS 1   ; variable que se usa en la division para guardar la unidad
-  DECENA_T3:    DS 1   ; variable que se usa en la division para guardar la decena
-  RESIDUO_T3:   DS 1   ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
-  UNIDAD2_T3:   DS 1   ; Se guarda el valor traducido por la tabla de la variable unidad
-  DECENA2_T3:   DS 1   ; Se guarda el valor traducido por la tabla de la variable decena 
+  UNIDAD_T3:  DS 1 ; variable que se usa en la division para guardar la unidad
+  DECENA_T3:  DS 1 ; variable que se usa en la division para guardar la decena
+  RESIDUO_T3: DS 1 ; Se usa para guardar lo que hay en el puertoA e ir restando en la division
+  UNIDAD2_T3: DS 1 ; Se guarda el valor traducido por la tabla de la variable unidad
+  DECENA2_T3: DS 1 ; Se guarda el valor traducido por la tabla de la variable decena 
     
   RESET_DIS:    DS 1  
 
@@ -77,12 +77,12 @@ PROCESSOR 16F887  ; Se elige el microprocesador a usar
   STATUS_T:  DS 1 ; variable que de interrupcio que guarda STATUS
   SENAL:     DS 1 ; Se utiliza como indicador para el cambio de display
   Estado:    DS 1 ; Se utiliza como indicador para el cambio de estado
-  V1:        DS 1
-  V2:        DS 1
-  V3:        DS 1 
-  TIEMPO1:   DS 1 
-  TIEMPO2:   DS 1
-  TIEMPO3:   DS 1
+  V1:        DS 1 ; Varible que se incrementa y decrementa para la conf. de via1
+  V2:        DS 1 ; Varible que se incrementa y decrementa para la conf. de via2
+  V3:        DS 1 ; Varible que se incrementa y decrementa para la conf. de via3
+  TIEMPO1:   DS 1 ; Variable donde se guarda el tiempo de la via1
+  TIEMPO2:   DS 1 ; Variable donde se guarda el tiempo de la via2
+  TIEMPO3:   DS 1 ; Variable donde se guarda el tiempo de la via3
   
 ;Instrucciones de reset
 PSECT resVect, class=code, abs, delta=2
@@ -203,7 +203,7 @@ main:
     MOVLW 20
     MOVWF TIEMPO2
     MOVLW 30
-    MOVWF TIEMPO3
+    MOVWF TIEMPO3 ; Se asignan los valores iniciales de los tiempos de las vias
     
     ;Configuracion del timer1
     BANKSEL PIE1
@@ -225,11 +225,11 @@ main:
     BANKSEL PORTA 
     
 loop:
-    CALL LED_MODO
-    CALL MOSTRAR_DIS
-    CALL DIVISION
-    CALL PARA_MODO_NORMAL
-    GOTO loop
+    CALL LED_MODO ; Subrrutina para el cambio el cambio LED en el modo
+    CALL MOSTRAR_DIS ; Sirve para guardar el valor en variables que se mostraran
+    CALL DIVISION ; Donde se hace la division para obtener un valor decimal
+    CALL PARA_MODO_NORMAL ; Sirve para hacer los cambios de modo del sistema
+    GOTO loop ; ciclo infinito
    
 PULL_UP:
     BANKSEL OPTION_REG
@@ -252,10 +252,10 @@ PULL_UP:
     
 OSCILLATOR:
     BANKSEL OSCCON ; Se ingresa al banco donde esta el registro OSCCON
-    bcf	    IRCF2   
-    bsf	    IRCF1   
-    bcf	    IRCF0  ; Se configura el oscilador a una frecuencia de 250kHz 
-    bsf	    SCS	  
+    BCF	    IRCF2   
+    BSF	    IRCF1   
+    BCF	    IRCF0  ; Se configura el oscilador a una frecuencia de 250kHz 
+    BSF	    SCS	  
     RETURN
     
 CONF_IOC:   
@@ -275,184 +275,179 @@ CONF_INTCON:
     RETURN
 ;se realiza el tiempo de los semaforos 
 PARA_MODO_NORMAL:
-    movlw 10            ;Si el tiempo en Tiempo1M1 es 10, entonces:
-    subwf TIEMPO1, 0
-    btfsc STATUS, 2
-    bsf PORTA, 2        ;Encender led verde semaforo 1
-    btfsc STATUS, 2
-    bcf PORTA, 0  ;Apagar led roja para el semaforo 1
-    btfsc STATUS, 2
-    bcf PORTA, 1  ;APAGA LED AMARILLA semaforo1
-    btfsc STATUS, 2
-    bsf PORTA, 3        ;Encender led roja para el semaforo 2
-    btfsc STATUS, 2
-    bcf PORTA, 4       ;APAGA led amarillo del semaforo 2
-    btfsc STATUS, 2
-    bcf PORTA, 5       ;APAGA led verde del semaforo 2
-    btfsc STATUS, 2
-    bcf PORTE, 2      ;APARGA led verde del semaforo 3
-    btfsc STATUS, 2
-    bcf PORTE, 1       ;APAGA led amarilla del semaforo3
-    btfsc STATUS, 2
-    bsf PORTE, 0        ;Encender led roja para el semaforo 3
-    movlw 6            ;Si el tiempo en Tiempo1M1 es 6, entonces:
-    subwf TIEMPO1, 0
-    btfsc STATUS, 2
-    bcf PORTA, 2        ;Hacer titilar led verde
-    btfsc STATUS, 2
-    bsf PORTA, 2
-    btfsc STATUS, 2
-    bcf PORTA, 2
-    movlw 5            ;Hacer titilar led verde
-    subwf TIEMPO1, 0
-    btfsc STATUS, 2
-    bsf PORTA, 2
-    btfsc STATUS, 2
-    bcf PORTA, 2
-    btfsc STATUS, 2
-    bsf PORTA, 2
-    movlw 4            ;Hacer titilar led verde
-    subwf TIEMPO1, 0
-    btfsc STATUS, 2
-    bcf PORTA, 2
-    btfsc STATUS, 2
-    bsf PORTA, 2
-    btfsc STATUS, 2
-    bcf PORTA, 2
-    movlw 3            ;Si el tiempo en Tiempo1M1 es 3, entonces:
-    subwf TIEMPO1, 0
-    btfsc STATUS, 2
-    bsf PORTA, 1        ;Encender led amarilla
-    movlw 0            ;Si el tiempo en Tiempo1M1 es 0, entonces:
-    subwf TIEMPO1, 0
-    btfsc STATUS, 2
-    bcf PORTA, 1        ;Apagar led amarilla
-    btfsc STATUS, 2
-    call TOPE            ;Llamar subrutina para regresar al tiempo inicial
+    MOVLW 10            ;Para el tiempo del primer semaforo:
+    SUBWF TIEMPO1, 0
+    BTFSC STATUS, 2
+    BSF PORTA, 2        ;Encender led verde semaforo 1
+    BTFSC STATUS, 2
+    BCF PORTA, 0  ;Apagar led roja para el semaforo 1
+    BTFSC STATUS, 2
+    BCF PORTA, 1  ;APAGA LED AMARILLA semaforo1
+    BTFSC STATUS, 2
+    BSF PORTA, 3        ;Encender led roja para el semaforo 2
+    BTFSC STATUS, 2
+    BCF PORTA, 4       ;APAGA led amarillo del semaforo 2
+    BTFSC STATUS, 2
+    BCF PORTA, 5       ;APAGA led verde del semaforo 2
+    BTFSC STATUS, 2
+    BCF PORTE, 2      ;APARGA led verde del semaforo 3
+    BTFSC STATUS, 2
+    BCF PORTE, 1       ;APAGA led amarilla del semaforo3
+    BTFSC STATUS, 2
+    BCF PORTE, 0        ;Encender led roja para el semaforo 3
+    MOVLW 6            ;Si el tiempo en Tiempo1M1 es 6, entonces:
+    SUBWF TIEMPO1, 0
+    BTFSC STATUS, 2
+    BCF PORTA, 2        ;Hacer titilar led verde del semaforo 1
+    BTFSC STATUS, 2
+    BSF PORTA, 2
+    BTFSC STATUS, 2
+    BCF PORTA, 2
+    MOVLW 5            ;Hacer titilar led verde del semaforo 1
+    SUBWF TIEMPO1, 0
+    BTFSC STATUS, 2
+    BSF PORTA, 2
+    BTFSC STATUS, 2
+    BCF PORTA, 2
+    BTFSC STATUS, 2
+    BSF PORTA, 2
+    MOVLW 4            ;Hacer titilar led verde del semaforo 1
+    SUBWF TIEMPO1, 0
+    BTFSC STATUS, 2
+    BCF PORTA, 2
+    BTFSC STATUS, 2
+    BSF PORTA, 2
+    BTFSC STATUS, 2
+    BCF PORTA, 2
+    MOVLW 3            ;cuando llega a 3:
+    SUBWF TIEMPO1, 0
+    BTFSC STATUS, 2
+    BSF PORTA, 1        ;Se enciende el amarillo del semaforo1
+    MOVLW 0            ;Si el tiempo ya es 0:
+    SUBWF TIEMPO1, 0
+    BTFSC STATUS, 2
+    BCF PORTA, 1        ;Se apaga led amarilla
+    BTFSC STATUS, 2
+    CALL TOPE            ;Llamar subrutina para declarar el tope
 
-    movlw 10            ;Si el tiempo en Tiempo1M1 es 10, entonces:
-    subwf TIEMPO2, 0
-    btfsc STATUS, 2
-    bsf PORTA, 5        ;Encender led verde
-    btfsc STATUS, 2
-    bsf PORTA, 0        ;Apagar led roja para el semaforo 1
-    btfsc STATUS, 2
-    bcf PORTA, 3        ;Encender led roja para el semaforo 2
-    btfsc STATUS, 2
-    bsf PORTE, 0        ;Encender led roja para el semaforo 3
-    movlw 6            ;Si el tiempo en Tiempo1M1 es 6, entonces:
-    subwf TIEMPO2, 0
-    btfsc STATUS, 2
-    bcf PORTA, 5        ;Hacer titilar led verde
-    btfsc STATUS, 2
-    bsf PORTA, 5
-    btfsc STATUS, 2
-    bcf PORTA, 5
-    movlw 5            ;Hacer titilar led verde
-    subwf TIEMPO2, 0
-    btfsc STATUS, 2
-    bsf PORTA, 5
-    btfsc STATUS, 2
-    bcf PORTA, 5
-    btfsc STATUS, 2
-    bsf PORTA, 5
-    movlw 4            ;Hacer titilar led verde
-    subwf TIEMPO2, 0
-    btfsc STATUS, 2
-    bcf PORTA, 5
-    btfsc STATUS, 2
-    bsf PORTA, 5
-    btfsc STATUS, 2
-    bcf PORTA, 5
-    movlw 3            ;Si el tiempo en Tiempo1M1 es 3, entonces:
-    subwf TIEMPO2, 0
-    btfsc STATUS, 2
-    bsf PORTA, 4        ;Encender led amarilla
-    movlw 0            ;Si el tiempo en Tiempo1M1 es 0, entonces:
-    subwf TIEMPO2, 0
-    btfsc STATUS, 2
-    bcf PORTA, 4        ;Apagar led amarilla
-    btfsc STATUS, 2
-    call TOPE            ;Llamar subrutina para regresar al tiempo inicial    
+    MOVLW 10            ;Para el tiempo del segundo semaforo
+    SUBWF TIEMPO2, 0
+    BTFSC STATUS, 2
+    BSF PORTA, 5        ;Encender led verde del semaforo2
+    BTFSC STATUS, 2
+    BSF PORTA, 0        ;Enciend led roja para el semaforo 1
+    BTFSC STATUS, 2
+    BCF PORTA, 3        ;Apaga led roja para el semaforo 2
+    BTFSC STATUS, 2
+    BSF PORTE, 0        ;Encender led roja para el semaforo 3
+    MOVLW 6            ;Si el tiempo llega a 6:
+    SUBWF TIEMPO2, 0
+    BTFSC STATUS, 2
+    BCF PORTA, 5        ;Hacer titilar led verde del semaforo2
+    BTFSC STATUS, 2
+    BSF PORTA, 5
+    BTFSC STATUS, 2
+    BCF PORTA, 5
+    MOVLW 5            ;Hacer titilar led verde del semaforo2
+    SUBWF TIEMPO2, 0
+    BTFSC STATUS, 2
+    BSF PORTA, 5
+    BTFSC STATUS, 2
+    BCF PORTA, 5
+    BTFSC STATUS, 2
+    BSF PORTA, 5
+    MOVLW 4            ;Hacer titilar led verde del semaforo2
+    SUBWF TIEMPO2, 0
+    BTFSC STATUS, 2
+    BCF PORTA, 5
+    BTFSC STATUS, 2
+    BSF PORTA, 5
+    BTFSC STATUS, 2
+    BCF PORTA, 5
+    MOVLW 3            ;Si el tiempo llega a 3:
+    SUBWF TIEMPO2, 0
+    BTFSC STATUS, 2
+    BSF PORTA, 4        ;Encender led amarilla del semaforo2
+    MOVLW 0            ;Si el tiempo llega a 0:
+    SUBWF TIEMPO2, 0
+    BTFSC STATUS, 2
+    BCF PORTA, 4        ;Apagar led amarilla
+    BTFSC STATUS, 2
+    CALL TOPE            ;Llamar subrutina para hacer el tope de tiempo    
     
-    movlw 10            ;Si el tiempo en Tiempo1M1 es 10, entonces:
-    subwf TIEMPO3, 0
-    btfsc STATUS, 2
-    bsf PORTE, 2        ;Encender led verde
-    btfsc STATUS, 2
-    bsf PORTA, 0        ;Apagar led roja para el semaforo 1
-    btfsc STATUS, 2
-    bsf PORTA, 3        ;Encender led roja para el semaforo 2
-    btfsc STATUS, 2
-    bcf PORTE, 0        ;Encender led roja para el semaforo 3
-    movlw 6            ;Si el tiempo en Tiempo1M1 es 6, entonces:
-    subwf TIEMPO3, 0
-    btfsc STATUS, 2
-    bcf PORTE, 2        ;Hacer titilar led verde
-    btfsc STATUS, 2
-    bsf PORTE, 2
-    btfsc STATUS, 2
-    bcf PORTE, 2
-    movlw 5            ;Hacer titilar led verde
-    subwf TIEMPO3, 0
-    btfsc STATUS, 2
-    bsf PORTE, 2
-    btfsc STATUS, 2
-    bcf PORTE, 2
-    btfsc STATUS, 2
-    bsf PORTE, 2
-    movlw 4            ;Hacer titilar led verde
-    subwf TIEMPO3, 0
-    btfsc STATUS, 2
-    bcf PORTE, 2
-    btfsc STATUS, 2
-    bsf PORTE, 2
-    btfsc STATUS, 2
-    bcf PORTE, 2
-    movlw 3            ;Si el tiempo en Tiempo1M1 es 3, entonces:
-    subwf TIEMPO3, 0
-    btfsc STATUS, 2
-    bsf PORTE, 1        ;Encender led amarilla
-    movlw 0            ;Si el tiempo en Tiempo1M1 es 0, entonces:
-    subwf TIEMPO3, 0
-    btfsc STATUS, 2
-    bcf PORTE, 1        ;Apagar led amarilla
-    btfsc STATUS, 2
-    call TOPE            ;Llamar subrutina para regresar al tiempo inicial 
+    MOVLW 10            ;Para el tiempo del tercer semaforo
+    SUBWF TIEMPO3, 0
+    BTFSC STATUS, 2
+    BSF PORTE, 2        ;Encender led verde del tercer semaforo
+    BTFSC STATUS, 2
+    BSF PORTA, 0        ;Enciende led roja para el semaforo 1
+    BTFSC STATUS, 2
+    BSF PORTA, 3        ;Encender led roja para el semaforo 2
+    BTFSC STATUS, 2
+    BCF PORTE, 0        ;Apaga led roja para el semaforo 3
+    MOVLW 6            ;Si el tiempo llega a 6, entonces:
+    SUBWF TIEMPO3, 0
+    BTFSC STATUS, 2
+    BCF PORTE, 2        ;Hacer titilar led verde del semaforo 3
+    BTFSC STATUS, 2
+    BSF PORTE, 2
+    BTFSC STATUS, 2
+    BCF PORTE, 2
+    MOVLW 5            ;Hacer titilar led verde del semaforo 3
+    SUBWF TIEMPO3, 0
+    BTFSC STATUS, 2
+    BSF PORTE, 2
+    BTFSC STATUS, 2
+    BCF PORTE, 2
+    BTFSC STATUS, 2
+    BSF PORTE, 2
+    MOVLW 4            ;Hacer titilar led verde del semaforo 3
+    SUBWF TIEMPO3, 0
+    BTFSC STATUS, 2
+    BCF PORTE, 2
+    BTFSC STATUS, 2
+    BSF PORTE, 2
+    BTFSC STATUS, 2
+    BCF PORTE, 2
+    MOVLW 3            ;Si el tiempo llega a 3:
+    SUBWF TIEMPO3, 0
+    BTFSC STATUS, 2
+    BSF PORTE, 1        ;Encender led amarilla del semaforo 3
+    MOVLW 0            ;Si el tiempo llega a 0:
+    SUBWF TIEMPO3, 0
+    BTFSC STATUS, 2
+    BCF PORTE, 1        ;Apagar led amarilla del semaforo 3
+    BTFSC STATUS, 2
+    CALL TOPE            ;Llamar subrutina para hacer el tope de tiempo 
     RETURN
     
 TOPE:
-    ;SEMAFORO1
-    movlw 0            ;Si el tiempo en Tiempo1M1 es 0, entonces:
-    subwf TIEMPO1, 0
-    btfsc STATUS, 2
-    CALL PARA_T1            ;Asignar tiempo de espera a la vía 1
-    ;btfsc STATUS, 2
-    movwf TIEMPO1
-    ;btfsc STATUS, 2
-    bsf PORTA, 0        ;Encender led roja
+    ;Para el semaforo 1
+    MOVLW 0            ;Si el tiempo, del semaforo1, llega a 0 :
+    SUBWF TIEMPO1, 0
+    BTFSC STATUS, 2
+    CALL PARA_T1   ; Se llama para hacer la sumatoria de los tiempos T2 Y T3
+    MOVWF TIEMPO1  ; se carga el valor al tiempo del semaforo1
+    BSF PORTA, 0        ;Encender led roja del semaforo 1
 
-    ;SEMAFORO 2
-    movlw 0            ;Si el tiempo en Tiempo2M1 es 0, entonces:
-    subwf TIEMPO2, 0
-    btfsc STATUS, 2
-    CALL  PARA_T2         ;Asignar tiempo de espera a la vía 2
-   ;btfsc STATUS, 2
-    movwf TIEMPO2
-    ;btfsc STATUS, 2
-    bsf PORTA, 3        ;Encender led roja
+    ;Para el semaforo 2
+    MOVLW 0            ;Si el tiempo, del semaforo2, llega a 0 :
+    SUBWF TIEMPO2, 0
+    BTFSC STATUS, 2
+    CALL  PARA_T2      ;Se llama para hacer la sumatoria de los tiempos T1 Y T3
+    MOVWF TIEMPO2    ; se carga el valor al tiempo del semaforo2
+    BSF PORTA, 3        ;Encender led roja del semaforo 2
 
-    ;SEMAFORO 3
-    movlw 0            ;Si el tiempo en Tiempo3M1 es 0, entonces:
-    subwf TIEMPO3, 0
-    btfsc STATUS, 2
-    CALL  PARA_T3        ;Asignar tiempo de espera a la vía 3
-    ;btfsc STATUS, 2
-    movwf TIEMPO3
-    ;btfsc STATUS, 2
-    bsf PORTE, 0        ;Encender led roja
-    return
+    ;Para el semaforo 3
+    MOVLW 0            ;Si el tiempo, del semaforo3, llega a 0 :
+    SUBWF TIEMPO3, 0
+    BTFSC STATUS, 2
+    CALL  PARA_T3      ;Se llama para hacer la sumatoria de los tiempos T2 Y T1
+    MOVWF TIEMPO3    ; se carga el valor al tiempo del semaforo3
+    BSF PORTE, 0        ;Encender led roja del semaforo 3
+    RETURN 
     
+;Se hace la sumatoria de los tiempos para cada uno de los topes de los semaforos
 PARA_T1:
     MOVF TIEMPO2,0
     ADDWF TIEMPO3,0
@@ -481,7 +476,7 @@ normal:
     BCF PORTB, 4
     BCF PORTB, 5
     BCF PORTB, 6
-    BCF PORTB, 7
+    BCF PORTB, 7 ; Para el modo normal 
     RETURN
     
 via1:
@@ -489,7 +484,7 @@ via1:
     BSF PORTB, 4
     BCF PORTB, 5
     BCF PORTB, 6
-    BCF PORTB, 7
+    BCF PORTB, 7 ; Para la configuaracion de tiempo para la via 1
     RETURN
      
 via2:
@@ -497,7 +492,7 @@ via2:
     BCF PORTB, 4
     BSF PORTB, 5
     BCF PORTB, 6
-    BCF PORTB, 7
+    BCF PORTB, 7 ; Para la configuaracion de tiempo para la via 2
     RETURN
     
 via3:
@@ -505,7 +500,7 @@ via3:
     BCF PORTB, 4
     BCF PORTB, 5
     BSF PORTB, 6
-    BCF PORTB, 7
+    BCF PORTB, 7; Para la configuaracion de tiempo para la via 3
     RETURN
     
 ACEP_CAN:
@@ -513,7 +508,7 @@ ACEP_CAN:
     BCF PORTB, 4
     BCF PORTB, 5
     BCF PORTB, 6
-    BSF PORTB, 7
+    BSF PORTB, 7; Para indicar que estamos en el modo aceptar o cancelar 
     RETURN
     
 MOSTRAR_DIS:
@@ -564,15 +559,15 @@ DIVISION:
     clrf DECENA_V1    ;Limpiamos los registros a utilizar 
     clrf UNIDAD_V1
     clrf RESIDUO_V1
-    movf V1, 0    ;Trasladamos valor en IncrementoT1 a resta 
+    movf V1, 0     
     movwf RESIDUO_V1
     movlw 10        ;Mover valor 10 a W
-    subwf RESIDUO_V1, f    ;Restamos W y Resta, lo guardamos en el registro
+    subwf RESIDUO_V1, f    
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     incf DECENA_V1    ;Incrementar decenas
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     goto $-5        ;Repetir hasta que ya no hayan decenas
-    movlw 10        ;Evitar que haya un overlap (00h - FFh)
+    movlw 10        
     addwf RESIDUO_V1
     movf RESIDUO_V1, 0    ;Trasladar valor restante a unidades
     movwf UNIDAD_V1
@@ -580,15 +575,15 @@ DIVISION:
     clrf DECENA_V2    ;Limpiamos los registros a utilizar 
     clrf UNIDAD_V2
     clrf RESIDUO_V2
-    movf V2, 0    ;Trasladamos valor en IncrementoT1 a resta 
+    movf V2, 0    
     movwf RESIDUO_V2
     movlw 10        ;Mover valor 10 a W
-    subwf RESIDUO_V2, f    ;Restamos W y Resta, lo guardamos en el registro
+    subwf RESIDUO_V2, f    
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     incf DECENA_V2    ;Incrementar decenas
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     goto $-5        ;Repetir hasta que ya no hayan decenas
-    movlw 10        ;Evitar que haya un overlap (00h - FFh)
+    movlw 10        
     addwf RESIDUO_V2
     movf RESIDUO_V2, 0    ;Trasladar valor restante a unidades
     movwf UNIDAD_V2
@@ -596,15 +591,15 @@ DIVISION:
     clrf DECENA_V3    ;Limpiamos los registros a utilizar 
     clrf UNIDAD_V3
     clrf RESIDUO_V3
-    movf V3, 0    ;Trasladamos valor en IncrementoT1 a resta 
+    movf V3, 0     
     movwf RESIDUO_V3
     movlw 10        ;Mover valor 10 a W
-    subwf RESIDUO_V3, f    ;Restamos W y Resta, lo guardamos en el registro
+    subwf RESIDUO_V3, f    
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     incf DECENA_V3    ;Incrementar decenas
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     goto $-5        ;Repetir hasta que ya no hayan decenas
-    movlw 10        ;Evitar que haya un overlap (00h - FFh)
+    movlw 10        
     addwf RESIDUO_V3
     movf RESIDUO_V3, 0    ;Trasladar valor restante a unidades
     movwf UNIDAD_V3
@@ -612,15 +607,15 @@ DIVISION:
     clrf DECENA_T1    ;Limpiamos los registros a utilizar 
     clrf UNIDAD_T1
     clrf RESIDUO_T1
-    movf TIEMPO1, 0    ;Trasladamos valor en IncrementoT1 a resta 
+    movf TIEMPO1, 0    
     movwf RESIDUO_T1
     movlw 10        ;Mover valor 10 a W
-    subwf RESIDUO_T1, f    ;Restamos W y Resta, lo guardamos en el registro
+    subwf RESIDUO_T1, f    
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     incf DECENA_T1    ;Incrementar decenas
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     goto $-5        ;Repetir hasta que ya no hayan decenas
-    movlw 10        ;Evitar que haya un overlap (00h - FFh)
+    movlw 10        
     addwf RESIDUO_T1
     movf RESIDUO_T1, 0    ;Trasladar valor restante a unidades
     movwf UNIDAD_T1
@@ -628,7 +623,7 @@ DIVISION:
     clrf DECENA_T2    ;Limpiamos los registros a utilizar 
     clrf UNIDAD_T2
     clrf RESIDUO_T2
-    movf TIEMPO2, 0    ;Trasladamos valor en IncrementoT1 a resta 
+    movf TIEMPO2, 0    
     movwf RESIDUO_T2
     movlw 10        ;Mover valor 10 a W
     subwf RESIDUO_T2, f    ;Restamos W y Resta, lo guardamos en el registro
@@ -636,7 +631,7 @@ DIVISION:
     incf DECENA_T2    ;Incrementar decenas
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     goto $-5        ;Repetir hasta que ya no hayan decenas
-    movlw 10        ;Evitar que haya un overlap (00h - FFh)
+    movlw 10        
     addwf RESIDUO_T2
     movf RESIDUO_T2, 0    ;Trasladar valor restante a unidades
     movwf UNIDAD_T2
@@ -644,7 +639,7 @@ DIVISION:
     clrf DECENA_T3    ;Limpiamos los registros a utilizar 
     clrf UNIDAD_T3
     clrf RESIDUO_T3
-    movf TIEMPO3, 0    ;Trasladamos valor en IncrementoT1 a resta 
+    movf TIEMPO3, 0    
     movwf RESIDUO_T3
     movlw 10        ;Mover valor 10 a W
     subwf RESIDUO_T3, f    ;Restamos W y Resta, lo guardamos en el registro
@@ -652,13 +647,12 @@ DIVISION:
     incf DECENA_T3    ;Incrementar decenas
     btfsc STATUS, 0    ;Si la bandera no se levanto, no saltar
     goto $-5        ;Repetir hasta que ya no hayan decenas
-    movlw 10        ;Evitar que haya un overlap (00h - FFh)
+    movlw 10        
     addwf RESIDUO_T3
     movf RESIDUO_T3, 0    ;Trasladar valor restante a unidades
     movwf UNIDAD_T3
     RETURN
     
-
 ;----------------------sub-rutinas de interrupcion------------------------------    
 
 SUB_TM1:
@@ -668,11 +662,12 @@ SUB_TM1:
     BANKSEL TMR1L
     MOVLW 0x7C
     MOVWF TMR1L ; Se carga el valor adecuado de trabajo a los registros del TMR1
-    DECF TIEMPO1 ; Se incrementa la variable cada vez.
+    DECF TIEMPO1 
     DECF TIEMPO2 
-    DECF TIEMPO3
+    DECF TIEMPO3 ; Se decrementan los tiempos de los semaforos 
     RETURN 
-      
+
+; Subrrutina de los pull-up
 ESTADOS:
     BTFSC Estado, 0
     GOTO  VIA1
@@ -689,50 +684,53 @@ NORMAL:
     RETURN
     
 VIA1:
-    BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
-    CALL INCREMENTO_V1 ;incrementa la variable
-    BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
-    CALL DECREMENTO_V1 ; decrementa la variable
+    BTFSS PORTB,1 ; verifica si el PB del segundo pin del puerto b esta activado
+    CALL INCREMENTO_V1 ; llama a subrrutina para incrementa la variable
+    BTFSS PORTB,2 ; verifica si el PB del terce pin del puerto b esta activado
+    CALL DECREMENTO_V1 ; llama a subrrutina para decrementa la variable
     BTFSS PORTB,0
     BCF   Estado,0
     BTFSS PORTB, 0
-    BSF   Estado,1
+    BSF   Estado,1 ; Si el PB del primer pin del puertoB cambia el valor de bandera
     RETURN
      
 VIA2:
-    BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
-    CALL INCREMENTO_V2 ;incrementa la variable
-    BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
-    CALL DECREMENTO_V2; decrementa la variable
+    BTFSS PORTB,1 ; verifica si el PB del segundo pin del puerto b esta activado
+    CALL INCREMENTO_V2 ;llama a subrrutina para incrementa la variable
+    BTFSS PORTB,2 ; verifica si el PB del tercer pin del puerto b esta activado
+    CALL DECREMENTO_V2;llama a subrrutina para decrementa la variable
     BTFSS PORTB,0
     BCF   Estado,1
     BTFSS PORTB, 0
-    BSF   Estado,2
+    BSF   Estado,2 ; Si el PB del primer pin del puertoB cambia el valor de bandera
     RETURN
     
 VIA3:
-    BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
-    CALL INCREMENTO_V3 ;incrementa la variable
-    BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
-    CALL DECREMENTO_V3; decrementa la variable
+    BTFSS PORTB,1 ; verifica si el PB del segundo pin del puerto b esta activado
+    CALL INCREMENTO_V3 ;llama a subrrutina para incrementa la variable
+    BTFSS PORTB,2 ; verifica si el PB del tercer pin del puerto b esta activado
+    CALL DECREMENTO_V3; llama a subrrutina para decrementa la variable
     BTFSS PORTB,0
     BCF   Estado,2
     BTFSS PORTB,0
-    BSF   Estado,3
+    BSF   Estado,3; Si el PB del primer pin del puertoB cambia el valor de bandera
     RETURN
     
 ACEPTAR_CANCELAR:
     BCF RESET_DIS,0
-    BTFSS PORTB,1 ; verifica si el PB del primer pin del puerto b esta activado
-    CALL ACEPTAR ;incrementa la variable
-    BTFSS PORTB,2 ; verifica si el PB del segundo pin del puerto b esta activado
-    CALL CANCELAR; decrementa la variable
+    BTFSS PORTB,1 ; verifica si el PB del segundo pin del puerto b esta activado
+    CALL ACEPTAR ;llama a subrrutina para cargar los valores a los semaforos
+    BTFSS PORTB,2 ; verifica si el PB del tercer pin del puerto b esta activado
+    CALL CANCELAR; llama a subrrutina para no cargar los valores propuestos
     BTFSS PORTB,0
     CALL REINICIO
-    BTFSS PORTB,0
-    CLRF  Estado
+    BTFSS PORTB,0; Si el PB del primer pin del puertoB limpia el valor de bandera
+    CLRF  Estado ; y reinicia todo.
     RETURN
     
+    
+; subrrutinas para el incremento y decremento de variables de las vias con rango
+; de 10 a 20 segundos
 INCREMENTO_V1:
     INCF    V1
     BCF     STATUS, 2
@@ -800,7 +798,7 @@ DECREMENTO_V3:
     RETURN
     
 ACEPTAR:
-    CALL RESETEO
+    CALL RESETEO ; se llama subrrutina para hacer la rutina de rest
     MOVF V1,0
     MOVWF TIEMPO1, 1
     MOVF V2,0
@@ -808,26 +806,25 @@ ACEPTAR:
     MOVWF TIEMPO2
     MOVF V3,0
     ADDWF TIEMPO2, 0
-    MOVWF TIEMPO3, 1
-    RETURN
+    MOVWF TIEMPO3, 1; Se cargan los valores configurados de cada via hacia los 
+    RETURN; los tiempos de los semaforos.
     
 CANCELAR:
     MOVLW 10
     MOVWF V1,1
     MOVWF V2,1
-    MOVWF V3,1
-    CLRF Estado
+    MOVWF V3,1;solamente se devuelven a su valor inicial los valores de las vias
     RETURN
 
 RESETEO:
     CLRF TIEMPO1
     CLRF TIEMPO2
-    CLRF TIEMPO3
+    CLRF TIEMPO3 ; se limpian los valores de los tiempos de los semaforos 
     BSF RESET_DIS,0
     BSF PORTA, 0
     BSF PORTA, 3
-    BSF PORTE, 0
-    RETURN
+    BSF PORTE, 0 ; Se prenden los leds rojos y se apagan los displays por un
+    RETURN; momento para indicar que se hizo el reseteo 
 
 REINICIO:
     CLRF TIEMPO1
@@ -838,8 +835,8 @@ REINICIO:
     MOVLW 20
     MOVWF TIEMPO2
     MOVLW 30
-    MOVWF TIEMPO3
-    RETURN
+    MOVWF TIEMPO3; subrrutina que sirve para reiniciar todo cuando se pasa del 
+    RETURN; modo 5 al modo 1 nuevamente cargandoles sus valores iniciales.
     
 R_TIMER0:
     BANKSEL PORTA
@@ -868,7 +865,7 @@ INT_T0:
     GOTO  DIS7
     
 DIS0:
-    BTFSC RESET_DIS,0
+    BTFSC RESET_DIS,0;Sirve para indicar el reseteo cuando se cargan los valores
     RETURN
     MOVF DECENA2_T1, W
     MOVWF PORTC
@@ -876,7 +873,7 @@ DIS0:
     GOTO NEXT_D0; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS1:
-    BTFSC RESET_DIS,0
+    BTFSC RESET_DIS,0;Sirve para indicar el reseteo cuando se cargan los valores
     RETURN
     MOVF UNIDAD2_T1, W
     MOVWF PORTC
@@ -884,7 +881,7 @@ DIS1:
     GOTO NEXT_D1 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS2:
-    BTFSC RESET_DIS,0
+    BTFSC RESET_DIS,0;Sirve para indicar el reseteo cuando se cargan los valores
     RETURN
     MOVF DECENA2_T2, W
     MOVWF PORTC
@@ -892,7 +889,7 @@ DIS2:
     GOTO NEXT_D2 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS3:
-    BTFSC RESET_DIS,0
+    BTFSC RESET_DIS,0;Sirve para indicar el reseteo cuando se cargan los valores
     RETURN
     MOVF UNIDAD2_T2, W
     MOVWF PORTC
@@ -900,7 +897,7 @@ DIS3:
     GOTO NEXT_D3 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
     
 DIS4:
-    BTFSC RESET_DIS,0
+    BTFSC RESET_DIS,0;Sirve para indicar el reseteo cuando se cargan los valores
     RETURN
     MOVF DECENA2_T3, W
     MOVWF PORTC
@@ -908,7 +905,7 @@ DIS4:
     GOTO NEXT_D4 ; Se utiliza para cambiar el valor de SENAL y cambiar de display
 
 DIS5:
-    BTFSC RESET_DIS,0
+    BTFSC RESET_DIS,0;Sirve para indicar el reseteo cuando se cargan los valores
     RETURN
     MOVF UNIDAD2_T3, W
     MOVWF PORTC
@@ -922,8 +919,8 @@ DIS6:
     CALL DIS_V1_DECENA
     BTFSC PORTB,5
     CALL DIS_V2_DECENA
-    BTFSC PORTB,6
-    CALL DIS_V3_DECENA
+    BTFSC PORTB,6; sirven para indicar que valor mostrar dependiendo del estado
+    CALL DIS_V3_DECENA; en que se esta para mostrarlo en el display
     BTFSC PORTB,7
     GOTO NEXT_D6
     BSF PORTD, 6 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
@@ -936,8 +933,8 @@ DIS7:
     CALL DIS_V1_UNIDAD
     BTFSC PORTB,5
     CALL DIS_V2_UNIDAD
-    BTFSC PORTB,6
-    CALL DIS_V3_UNIDAD
+    BTFSC PORTB,6;sirven para indicar que valor mostrar dependiendo del estado
+    CALL DIS_V3_UNIDAD; en que se esta para mostrarlo en el display
     BTFSC PORTB,7
     GOTO NEXT_D7
     BSF PORTD, 7 ; Se pone el valor de UNIDAD2 en el puerto D y se activa su display respectivo
@@ -962,19 +959,21 @@ NEXT_D3:
 NEXT_D4:
     MOVLW 00011000B
     XORWF SENAL, F
-    RETURN
+    RETURN; Se utiliza la operacion xor para activar el quinto bit de SENAL
 NEXT_D5:
     MOVLW 00110000B
     XORWF SENAL, F
-    RETURN
+    RETURN; Se utiliza la operacion xor para activar el sexto bit de SENAL
 NEXT_D6:
     MOVLW 01100000B
     XORWF SENAL, F
-    RETURN
+    RETURN; Se utiliza la operacion xor para activar el septimo bit de SENAL
 NEXT_D7:
     CLRF SENAL; Se limpia la variable SENAL
     RETURN
     
+  ; son subrrutinas para mostrar que el valor correspondiente dependiendo del 
+  ; modo en que se esta.
 DIS_V1_DECENA:
     MOVF DECENA2_V1, W
     MOVWF PORTC
