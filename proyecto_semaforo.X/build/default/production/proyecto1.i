@@ -2743,7 +2743,7 @@ PARA_MODO_NORMAL:
     BTFSC STATUS, 2
     BCF PORTE, 1 ;APAGA led amarilla del semaforo3
     BTFSC STATUS, 2
-    BCF PORTE, 0 ;Encender led roja para el semaforo 3
+    BSF PORTE, 0 ;Encender led roja para el semaforo 3
     MOVLW 6 ;Si el tiempo en Tiempo1M1 es 6, entonces:
     SUBWF TIEMPO1, 0
     BTFSC STATUS, 2

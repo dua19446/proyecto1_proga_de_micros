@@ -1,4 +1,4 @@
-; Archivo:     lab3.s
+; Archivo:     proyecto 1
 ; Dispositivo: PIC16F887
 ; Autor:       Alejandro Duarte
 ; Compilador:  pic-as (v2.30), MPLABX V5.40
@@ -6,8 +6,8 @@
 ; Programa:    contador en el puerto A
 ; Hardware:    LEDS en el puerto A, DISPLAY de 7 segmentos en puertos C y D
 ;
-; Creado: 2 MARZO, 2021
-; Última modificación: , 2021
+; Creado: 18 MARZO, 2021
+; Última modificación: 8 abril, 2021
 
 ; Assembly source line config statements
     
@@ -294,7 +294,7 @@ PARA_MODO_NORMAL:
     BTFSC STATUS, 2
     BCF PORTE, 1       ;APAGA led amarilla del semaforo3
     BTFSC STATUS, 2
-    BCF PORTE, 0        ;Encender led roja para el semaforo 3
+    BSF PORTE, 0        ;Encender led roja para el semaforo 3
     MOVLW 6            ;Si el tiempo en Tiempo1M1 es 6, entonces:
     SUBWF TIEMPO1, 0
     BTFSC STATUS, 2
